@@ -4,8 +4,10 @@
 #include "C.hpp"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 
-Base * generate(void)
+
+Base *generate()
 {
     int a = rand() % 3;
     if (a == 1)
@@ -18,26 +20,25 @@ Base * generate(void)
 
 void identify(Base* p)
 {
-    A* aaaa =  dynamic_cast<A*>(p);
-    if (aaaa)
+    A* a = dynamic_cast<A*>(p);
+    if (a != nullptr)
     {
         std::cout << "it's A\n";
         return;
     }
-    B* bbbb =  dynamic_cast<B*>(p);
-    if (bbbb)
+    B* b = dynamic_cast<B*>(p);
+    if (b != nullptr)
     {
         std::cout << "it's B\n";
         return;
     }
-    C* cccc =  dynamic_cast<C*>(p);
-    if (cccc)
+    C* c = dynamic_cast<C*>(p);
+    if (c != nullptr)
     {
-        std::cout << "it's C\n";  
+        std::cout << "it's C\n";
         return;
     }
 }
-
 
 void identify(Base& p)
 {
@@ -45,34 +46,31 @@ void identify(Base& p)
     {
         (void)dynamic_cast<A&>(p);
         std::cout << "it's A\n";
-        return;
+        return;        
     }
     catch(const std::exception& e)
     {
-        (void)e;
     }
     try
     {
         (void)dynamic_cast<B&>(p);
         std::cout << "it's B\n";
-        return;
+        return;        
     }
     catch(const std::exception& e)
     {
-        (void)e;
     }
-        try
+    try
     {
         (void)dynamic_cast<C&>(p);
         std::cout << "it's C\n";
-        return;
+        return;        
     }
     catch(const std::exception& e)
     {
-        (void)e;
     }
+    
 }
-
 
 int main()
 {

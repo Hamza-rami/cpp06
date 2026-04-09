@@ -3,12 +3,12 @@
 
 int main()
 {
-    Data* original = new Data();
-    original->a = 42;
-
+    Data* original = new Data;
+    original->a = 66;
     uintptr_t raw = Serializer::serialize(original);
     Data* result = Serializer::deserialize(raw);
-    
+
+
     std::cout << "original pointer: " << original << "\n";
     std::cout << "result pointer:   " << result << "\n";
     std::cout << "Raw:   " << raw << "\n";

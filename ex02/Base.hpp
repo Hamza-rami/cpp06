@@ -10,4 +10,3 @@ public:
     Base();
     virtual ~Base();
 };
-

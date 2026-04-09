@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = Serializer.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
-HDRS = Serializer.hpp
+HDRS = Serializer.hpp Data.hpp
 
 all: $(NAME)
 
