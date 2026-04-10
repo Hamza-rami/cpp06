@@ -1,12 +1,5 @@
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter()
-{
-}
-
-ScalarConverter::~ScalarConverter()
-{
-}
 
 int check_float(const std::string& literal)
 {
@@ -110,7 +103,7 @@ void ScalarConverter::convert(const std::string& literal)
             a = literal[0];
         else
             a = literal[1];
-        std::cout << "char: " << a << "\n";
+        std::cout << "char: \'" << a << "\'\n";
         std::cout << "int: " << static_cast<int>(a) << "\n";
         std::cout << "float: " << static_cast<float>(a) << "f\n";
         std::cout << "double: " << static_cast<double>(a) << "\n";
@@ -129,7 +122,7 @@ void ScalarConverter::convert(const std::string& literal)
     {
         int a = atoi(literal.c_str());
         if (a >= 32 && a <= 126)
-            std::cout << "char: " << static_cast<char>(a) << "\n";
+            std::cout << "char: \'" << static_cast<char>(a) << "\'\n";
         else
             std::cout << "char: Non displayable\n";
         std::cout << "int: " << a << "\n";
@@ -143,7 +136,7 @@ void ScalarConverter::convert(const std::string& literal)
         if (std::isnan(a) || std::isinf(a))
             std::cout << "char: impossible\n";
         else if (a >= 32 && a <= 126)
-            std::cout << "char: " << static_cast<char>(a) << "\n";
+            std::cout << "char: \'" << static_cast<char>(a) << "\'\n";
         else
             std::cout << "char: Non displayable\n";
 
@@ -162,7 +155,7 @@ void ScalarConverter::convert(const std::string& literal)
         if (std::isnan(a) || std::isinf(a))
             std::cout << "char: impossible\n";
         else if (a >= 32 && a <= 126)
-            std::cout << "char: " << static_cast<char>(a) << "\n";
+            std::cout << "char: \'" << static_cast<char>(a) << "\'\n";
         else
             std::cout << "char: Non displayable\n";
 
