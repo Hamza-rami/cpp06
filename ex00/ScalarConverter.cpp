@@ -110,7 +110,7 @@ void ScalarConverter::convert(const std::string& literal)
     }
     else if (type == "int")
     {
-    double check = atof(literal.c_str());
+    double check = strtod(literal.c_str(), NULL);
     if (check > INT_MAX || check < INT_MIN)
     {
         std::cout << "char: impossible\n";
@@ -132,7 +132,7 @@ void ScalarConverter::convert(const std::string& literal)
     }
     else if (type == "float")
     {
-        float a = (float)atof(literal.c_str()); 
+        float a = strtof(literal.c_str(), NULL);
         if (std::isnan(a) || std::isinf(a))
             std::cout << "char: impossible\n";
         else if (a >= 32 && a <= 126)
@@ -151,7 +151,7 @@ void ScalarConverter::convert(const std::string& literal)
     }
     else if (type == "double")
     {
-        double a = atof(literal.c_str()); 
+        double a = strtod(literal.c_str(), NULL);
         if (std::isnan(a) || std::isinf(a))
             std::cout << "char: impossible\n";
         else if (a >= 32 && a <= 126)
