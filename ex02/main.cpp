@@ -21,19 +21,19 @@ Base *generate()
 void identify(Base* p)
 {
     A* a = dynamic_cast<A*>(p);
-    if (a != nullptr)
+    if (a != NULL)
     {
         std::cout << "it's A\n";
         return;
     }
     B* b = dynamic_cast<B*>(p);
-    if (b != nullptr)
+    if (b != NULL)
     {
         std::cout << "it's B\n";
         return;
     }
     C* c = dynamic_cast<C*>(p);
-    if (c != nullptr)
+    if (c != NULL)
     {
         std::cout << "it's C\n";
         return;
