@@ -25,7 +25,7 @@ int check_float(const std::string& literal)
             return 0;
         i++;
     }
-    if (digits == 0)
+    if (digits == 0 || p == 0)
         return 0;
     return 1;
 }
@@ -88,7 +88,6 @@ std::string detectType(const  std::string& literal)
 
 void ScalarConverter::convert(const std::string& literal)
 {
-    std::cout << std::fixed << std::setprecision(1);
     if (literal.size() == 0)
     {
         std::cout << "type unknown\n";
@@ -105,8 +104,14 @@ void ScalarConverter::convert(const std::string& literal)
             a = literal[1];
         std::cout << "char: \'" << a << "\'\n";
         std::cout << "int: " << static_cast<int>(a) << "\n";
-        std::cout << "float: " << static_cast<float>(a) << "f\n";
-        std::cout << "double: " << static_cast<double>(a) << "\n";
+        if (a == static_cast<long long>(a))
+            std::cout << "float: " << static_cast<float>(a) << ".0" << "f\n";
+        else
+            std::cout << "float: " << static_cast<float>(a) << "f\n";
+        if (a == static_cast<long long>(a))
+            std::cout << "double: " << static_cast<double>(a) << ".0" << "\n";
+        else
+            std::cout << "double: " << static_cast<double>(a) << "\n";
     }
     else if (type == "int")
     {
@@ -115,8 +120,14 @@ void ScalarConverter::convert(const std::string& literal)
     {
         std::cout << "char: impossible\n";
         std::cout << "int: impossible\n";
-        std::cout << "float: " << static_cast<float>(check) << "f\n";
-        std::cout << "double: " << check << "\n";
+        if (check == static_cast<long long>(check))
+            std::cout << "float: " << static_cast<float>(check) << ".0" << "f\n";
+        else
+            std::cout << "float: " << static_cast<float>(check) << "f\n";
+        if (check == static_cast<long long>(check))
+            std::cout << "double: " << static_cast<double>(check) << ".0" << "\n";
+        else
+            std::cout << "double: " << static_cast<double>(check) << "\n";
     }
     else
     {
@@ -126,8 +137,14 @@ void ScalarConverter::convert(const std::string& literal)
         else
             std::cout << "char: Non displayable\n";
         std::cout << "int: " << a << "\n";
-        std::cout << "float: " << static_cast<float>(a) << "f\n";
-        std::cout << "double: " << static_cast<double>(a) << "\n";
+        if (a == static_cast<long long>(a))
+            std::cout << "float: " << static_cast<float>(a) << ".0" << "f\n";
+        else
+            std::cout << "float: " << static_cast<float>(a) << "f\n";
+        if (a == static_cast<long long>(a))
+            std::cout << "double: " << static_cast<double>(a) << ".0" << "\n";
+        else
+            std::cout << "double: " << static_cast<double>(a) << "\n";
     }
     }
     else if (type == "float")
@@ -145,8 +162,14 @@ void ScalarConverter::convert(const std::string& literal)
         else
             std::cout << "int: " << static_cast<int>(a) << "\n";
 
-        std::cout << "float: " << a << "f\n";
-        std::cout << "double: " << static_cast<double>(a) << "\n";
+        if (a == static_cast<long long>(a))
+            std::cout << "float: " << a << ".0" << "f\n";
+        else
+            std::cout << "float: " << a << "f\n";
+        if (a == static_cast<long long>(a))
+            std::cout << "double: " << static_cast<double>(a) << ".0" << "\n";
+        else
+            std::cout << "double: " << static_cast<double>(a) << "\n";
 
     }
     else if (type == "double")
@@ -163,9 +186,14 @@ void ScalarConverter::convert(const std::string& literal)
             std::cout << "int: impossible\n";
         else
             std::cout << "int: " << static_cast<int>(a) << "\n";
-
-        std::cout << "float: " << static_cast<float>(a) << "f\n";
-        std::cout << "double: " << a << "\n";
+        if (a == static_cast<long long>(a))
+            std::cout << "float: " << static_cast<float>(a) << ".0" << "f\n";
+        else
+            std::cout << "float: " << static_cast<float>(a) << "f\n";
+        if (a == static_cast<long long>(a))
+            std::cout << "double: " << a << ".0" << "\n";
+        else
+            std::cout << "double: " << a << "\n";
     }
     else
         std::cout << "type unknown\n";
