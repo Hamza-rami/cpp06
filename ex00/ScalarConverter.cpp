@@ -150,14 +150,14 @@ void ScalarConverter::convert(const std::string& literal)
 	else if (type == "float")
 	{
 		float a = strtof(literal.c_str(), NULL);
-		if (std::isnan(a) || std::isinf(a))
+		if (a - a != 0)
 			std::cout << "char: impossible\n";
 		else if (a >= 32 && a <= 126)
 			std::cout << "char: \'" << static_cast<char>(a) << "\'\n";
 		else
 			std::cout << "char: Non displayable\n";
 
-		if (std::isnan(a) || std::isinf(a) || a < -2147483648.0 || a > 2147483647.0)
+		if (a - a != 0 || a < -2147483648.0 || a > 2147483647.0)
 			std::cout << "int: impossible\n";
 		else
 			std::cout << "int: " << static_cast<int>(a) << "\n";
@@ -175,14 +175,14 @@ void ScalarConverter::convert(const std::string& literal)
 	else if (type == "double")
 	{
 		double a = strtod(literal.c_str(), NULL);
-		if (std::isnan(a) || std::isinf(a))
+		if (a - a != 0)
 			std::cout << "char: impossible\n";
 		else if (a >= 32 && a <= 126)
 			std::cout << "char: \'" << static_cast<char>(a) << "\'\n";
 		else
 			std::cout << "char: Non displayable\n";
 
-		if (std::isnan(a) || std::isinf(a) || a < -2147483648.0 || a > 2147483647.0) /// should remove isinf + isnan cuz of c++11
+		if (a - a != 0 || a < -2147483648.0 || a > 2147483647.0) /// should remove isinf + isnan cuz of c++11
 			std::cout << "int: impossible\n";
 		else
 			std::cout << "int: " << static_cast<int>(a) << "\n";
