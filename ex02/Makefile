@@ -2,9 +2,9 @@ NAME = typeinfo
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Base.cpp A.cpp B.cpp C.cpp main.cpp
+SRCS = Base.cpp A.cpp B.cpp C.cpp main.cpp functions.cpp
 OBJS = $(SRCS:.cpp=.o)
-HDRS = Base.hpp A.hpp B.hpp C.hpp
+HDRS = Base.hpp A.hpp B.hpp C.hpp functions.hpp
 
 all: $(NAME)
 

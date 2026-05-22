@@ -182,7 +182,7 @@ void ScalarConverter::convert(const std::string& literal)
 		else
 			std::cout << "char: Non displayable\n";
 
-		if (a - a != 0 || a < -2147483648.0 || a > 2147483647.0) /// should remove isinf + isnan cuz of c++11
+		if (a - a != 0 || a < -2147483648.0 || a > 2147483647.0)
 			std::cout << "int: impossible\n";
 		else
 			std::cout << "int: " << static_cast<int>(a) << "\n";
